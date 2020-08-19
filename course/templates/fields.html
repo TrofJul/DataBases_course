@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <form>
+    <h1>Врачи в выбранной области</h1><br>
+    <h6>Область медицины: {{name}}</h6>
+         {% for item in doctors %}
+            <hr>
+             <p>ФИО: {{item[0]}}</p>
+             <p>Телефон: {{item[1]}}</p>
+             <p>Почта: {{item[2]}}</p><br>
+             </hr>
+        {% endfor %}
+    </form>
+{% endblock %}

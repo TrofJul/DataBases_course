@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+ <h1>Болезнь</h1>
+        <p style="text-indent: 200px">
+            <a class="btn btn-link btn-lg" href="/redact_illness/{{name}}" role="button">Редактировать</a>
+        </p>
+     <form action="" method="post" novalidate>
+     {{ form.hidden_tag() }}
+     <p>
+         {{ form.name.label }}<br>
+         {{ form.name }}<br>
+         {% for error in form.name.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+     <p>
+         {{ form.st.label }}<br>
+             {{ form.st }}<br>
+         {% for error in form.st.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+     <p>
+         {{ form.descrip.label }}<br>
+             {{ form.descrip }}<br>
+         {% for error in form.descrip.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+         <p>
+         {{ form.diag.label }}<br>
+             {{ form.diag }}<br>
+         {% for error in form.diag.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+         <p>Лечение(Лекарства и процедуры)</p>
+         <p>
+         {{ form.meds.label }}<br>
+             {{ form.meds }}<br>
+         {% for error in form.meds.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+         <p>
+         {{ form.proc.label }}<br>
+             {{ form.proc }}<br>
+         {% for error in form.proc.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+         <p>
+         {{ form.causes.label }}<br>
+             {{ form.causes }}<br>
+         {% for error in form.causes.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+         <p>
+         {{ form.prof.label }}<br>
+             {{ form.prof }}<br>
+         {% for error in form.prof.errors %}
+             <div class="alert alert-danger" role="alert">
+             {{ error }}
+             </div>
+         {% endfor %}
+     </p>
+
+     </form>
+{% endblock %}

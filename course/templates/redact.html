@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Редактирование</h1><br>
+    <form action="" method="post" novalidate>
+         {{ form.hidden_tag() }}
+        <p>
+             {{ form.id.label }}<br>
+             {{ form.id }}<br>
+             {% for error in form.id.errors %}
+                 <div class="alert alert-danger" role="alert">
+                 {{ error }}
+                 </div>
+             {% endfor %}
+         </p>
+        <p>
+             {{ form.fio.label }}<br>
+             {{ form.fio }}<br>
+             {% for error in form.fio.errors %}
+                 <div class="alert alert-danger" role="alert">
+                 {{ error }}
+                 </div>
+             {% endfor %}
+         </p>
+        <p>
+             {{ form.tel.label }}<br>
+             {{ form.tel }}<br>
+             {% for error in form.tel.errors %}
+                 <div class="alert alert-danger" role="alert">
+                 {{ error }}
+                 </div>
+             {% endfor %}
+         </p>
+        <p>
+             {{ form.mail.label }}<br>
+             {{ form.mail }}<br>
+             {% for error in form.mail.errors %}
+                 <div class="alert alert-danger" role="alert">
+                 {{ error }}
+                 </div>
+             {% endfor %}
+         </p>
+        <p>
+             {{ form.field.label }}<br>
+             {{ form.field }}<br>
+             {% for error in form.field.errors %}
+                 <div class="alert alert-danger" role="alert">
+                 {{ error }}
+                 </div>
+             {% endfor %}
+       <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

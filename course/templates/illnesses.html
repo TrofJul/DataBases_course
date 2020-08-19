@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Болезни</h1>
+     <form action="" method="post" novalidate>
+         <form id ="il_form" action="" method="post" class="form-search">
+             <h5>Введите название болезни</h5>
+          <input type="text" name="nazv">
+          <button type="submit" name = "action" value = "Nazvanie" class="btn">Искать</button>
+
+             <h5>Введите симптомы болезни</h5>
+          <input type="text" name ="symp" class="input-medium search-query">
+          <button type="submit" name = "action" value = "Symptom" class="btn">Искать</button>
+         </form>
+         <br>
+         <a href="/add_illness">Добавить болезнь</a>
+         <br>
+         {% for item in names %}
+             <div class="alert alert-dark" role="alert">
+                 <a href="/illness/{{item[0]}}" style="color:#000000; text-decoration:none">{{item[0]}}</a>
+             </div>
+        {% endfor %}
+     </form>
+{% endblock %}

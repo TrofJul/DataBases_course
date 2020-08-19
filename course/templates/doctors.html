@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <form>
+    <h1>Врачи</h1>
+         <p style="text-indent: 400px">
+            <a class="btn btn-link btn-lg" href="/office" role="button">Личный кабинет</a>
+         </p>
+        <h3>Выберите область, медицины, в которой специализируется врач</h3>
+         {% for item in fields %}
+             <div class="alert alert-dark" role="alert">
+                 <a href="/fields/{{item[0]}}" style="color:#000000; text-decoration:none">{{item[0]}}</a>
+             </div>
+        {% endfor %}
+     </form>
+{% endblock %}
